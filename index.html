@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geography for Enquiring Minds · OCR B Revision · Harris Federation Geography</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --field:#E9F4E7; --card:#FFFFFF; --ink:#1F2A24; --mut:#5C6B60;
+  --moss:#2E7047; --navy:#1F3864; --ochre:#8F6A00; --ochre-bg:#FFF6E0;
+  --p1:#2E7047; --p1bg:#E1F0E3; --p2:#1F3864; --p2bg:#E3EAF6; --p3:#8F6A00; --p3bg:#FBF0D4;
+  --line:#C9DCC9; --radius:14px; --shadow:0 2px 10px rgba(31,42,36,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',system-ui,sans-serif;background:var(--field);color:var(--ink);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+header{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+header .contours{position:absolute;inset:0;opacity:.14;pointer-events:none}
+.mast{max-width:980px;margin:0 auto;padding:26px 18px 14px;position:relative}
+.mast .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#BFD3BE;font-weight:700}
+.mast h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(30px,6vw,44px);line-height:1.04;margin:4px 0 2px}
+.mast h1 em{font-style:italic;color:#D9C36A}
+.mast .sub{color:#C8D4E8;font-size:14px;font-weight:600}
+nav{position:sticky;top:0;z-index:50;background:var(--navy);box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.tabs{max-width:980px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;padding:10px 14px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;border:0;background:transparent;color:#C8D4E8;font:700 14px 'Nunito';padding:9px 16px;border-radius:999px;cursor:pointer;transition:.15s}
+.tab:hover{color:#fff}
+.tab.on{background:var(--field);color:var(--navy)}
+.tab:focus-visible{outline:2px solid #D9C36A;outline-offset:2px}
+main{max-width:980px;margin:0 auto;padding:22px 16px 90px}
+.panel{display:none}.panel.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.panel.on{animation:none}}
+h2{font-family:'Fraunces',serif;font-weight:700;font-size:26px;margin:6px 0 4px}
+.lead{color:var(--mut);font-size:15px;margin-bottom:18px;max-width:640px}
+.grid{display:grid;gap:14px}
+@media(min-width:720px){.grid.c3{grid-template-columns:repeat(3,1fr)}.grid.c2{grid-template-columns:repeat(2,1fr)}}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;border-top:5px solid var(--moss)}
+.card h3{font-family:'Fraunces',serif;font-size:20px;margin-bottom:2px}
+.chip{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.06em;padding:3px 10px;border-radius:999px;margin:0 6px 6px 0}
+.p1 .chip.paper,.chip.cp1{background:var(--p1bg);color:var(--p1)}
+.p2 .chip.paper,.chip.cp2{background:var(--p2bg);color:var(--p2)}
+.p3 .chip.paper,.chip.cp3{background:var(--p3bg);color:var(--p3)}
+.card.p1{border-top-color:var(--p1)}.card.p2{border-top-color:var(--p2)}.card.p3{border-top-color:var(--p3)}
+.meta{color:var(--mut);font-size:13.5px;font-weight:700;margin-bottom:8px}
+ul.tick{list-style:none;margin:8px 0}
+ul.tick li{padding:3px 0 3px 22px;position:relative;font-size:14.5px}
+ul.tick li::before{content:'';position:absolute;left:2px;top:10px;width:8px;height:8px;border-radius:2px;background:var(--moss)}
+.p2 ul.tick li::before{background:var(--p2)}
+.p3 ul.tick li::before{background:var(--p3)}
+.pill-row{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.note{background:var(--ochre-bg);border-left:4px solid var(--ochre);border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:10px}
+.note b{color:var(--ochre)}
+details{margin-top:8px;border-top:1px solid var(--line);padding-top:8px}
+summary{cursor:pointer;font-weight:800;font-size:14px;color:var(--navy)}
+summary:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+details[open] summary{margin-bottom:6px}
+.tariff{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
+.tariff th,.tariff td{padding:7px 8px;text-align:left;border-bottom:1px solid var(--line)}
+.tariff th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut)}
+/* topics */
+.topic{margin-bottom:14px}
+.gref{font-family:ui-monospace,Menlo,monospace;font-size:12px;font-weight:700;background:var(--field);border:1px solid var(--line);border-radius:6px;padding:2px 8px;color:var(--mut)}
+/* glossary */
+.searchbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.searchbar input{flex:1;min-width:200px;padding:11px 14px;border:1.5px solid var(--line);border-radius:10px;font:600 15px 'Nunito';background:#fff;color:var(--ink)}
+.searchbar input:focus{outline:2px solid var(--moss)}
+.fbtn{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font:700 13px 'Nunito';cursor:pointer;color:var(--mut)}
+.fbtn.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.gitem{background:#fff;border-radius:10px;box-shadow:var(--shadow);padding:12px 14px;margin-bottom:8px}
+.gitem b{font-size:15px}
+.gitem .def{font-size:14px;color:var(--ink)}
+.gitem .tag{font-size:11px;font-weight:800;color:var(--mut);text-transform:uppercase;letter-spacing:.05em}
+/* flashcards */
+.deck-grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));margin-bottom:16px}
+.deckbtn{border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:14px 12px;font:800 14px 'Nunito';cursor:pointer;text-align:left;color:var(--ink);transition:.15s}
+.deckbtn:hover{border-color:var(--moss)}
+.deckbtn.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.deckbtn small{display:block;font-weight:700;color:var(--mut);font-size:12px}
+.deckbtn.on small{color:#C8D4E8}
+.flash{perspective:1200px;max-width:560px;margin:0 auto}
+.fcard{position:relative;width:100%;min-height:240px;cursor:pointer;transform-style:preserve-3d;transition:transform .45s}
+.fcard.flip{transform:rotateY(180deg)}
+@media (prefers-reduced-motion:reduce){.fcard{transition:none}}
+.face{position:absolute;inset:0;backface-visibility:hidden;background:#fff;border-radius:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:26px;text-align:center}
+.face.back{transform:rotateY(180deg);background:var(--navy);color:#fff}
+.face .q{font-family:'Fraunces',serif;font-size:20px;font-weight:700}
+.face .a{font-size:16px;font-weight:600}
+.face .hint{position:absolute;bottom:12px;font-size:12px;color:var(--mut);font-weight:700}
+.face.back .hint{color:#C8D4E8}
+.fc-controls{display:flex;gap:8px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.btn{border:0;border-radius:10px;padding:11px 18px;font:800 14px 'Nunito';cursor:pointer;transition:.15s}
+.btn.primary{background:var(--moss);color:#fff}
+.btn.navy{background:var(--navy);color:#fff}
+.btn.ghost{background:#fff;border:1.5px solid var(--line);color:var(--ink)}
+.btn.again{background:#FDECEA;color:#B3261E}
+.btn.got{background:var(--p1bg);color:var(--p1)}
+.btn:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+.fc-progress{text-align:center;font-size:13px;font-weight:800;color:var(--mut);margin-top:10px}
+/* practice */
+.qcard{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin-bottom:14px}
+.qcard .qt{font-weight:800;font-size:16px;margin-bottom:10px}
+.opt{display:block;width:100%;text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:11px 14px;font:600 14.5px 'Nunito';margin-bottom:8px;cursor:pointer;color:var(--ink)}
+.opt:hover{border-color:var(--navy)}
+.opt.correct{background:var(--p1bg);border-color:var(--p1);font-weight:800}
+.opt.wrong{background:#FDECEA;border-color:#B3261E}
+.opt:disabled{cursor:default;opacity:.95}
+.expl{display:none;font-size:13.5px;background:var(--field);border-radius:8px;padding:10px 12px;margin-top:4px}
+.expl.show{display:block}
+.score{font-weight:800;color:var(--navy);font-size:15px;margin:10px 0}
+.msq{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin-bottom:14px;border-left:5px solid var(--ochre)}
+.msq .marks{color:#B3261E;font-weight:900}
+.ao{display:inline-block;font-size:11px;font-weight:900;background:var(--p2bg);color:var(--p2);border-radius:5px;padding:2px 7px;margin-right:5px}
+footer{max-width:980px;margin:0 auto;padding:18px 16px 40px;color:var(--mut);font-size:12.5px}
+</style>
+</head>
+<body>
+<header>
+<svg class="contours" viewBox="0 0 900 220" preserveAspectRatio="none" aria-hidden="true">
+<g fill="none" stroke="#ffffff" stroke-width="1.2">
+<path d="M-20,180 C120,120 260,200 420,150 S720,60 920,120"/>
+<path d="M-20,150 C140,90 300,170 460,120 S740,30 920,90"/>
+<path d="M-20,120 C160,66 330,140 500,95 S760,10 920,60"/>
+<path d="M-20,90 C180,40 360,110 540,70 S780,-10 920,30"/>
+<path d="M60,220 C200,160 340,230 520,180 S800,120 940,170"/>
+</g>
+</svg>
+<div class="mast">
+<div class="eyebrow">Harris Federation Geography · Year 11</div>
+<h1>Geography for <em>Enquiring Minds</em></h1>
+<div class="sub">OCR B (J384) revision · Papers 1, 2 &amp; 3 · built for phones, made for grades</div>
+</div>
+</header>
+<nav><div class="tabs" role="tablist">
+<button class="tab on" data-p="papers" role="tab">Papers</button>
+<button class="tab" data-p="topics" role="tab">Topics</button>
+<button class="tab" data-p="glossary" role="tab">Glossary</button>
+<button class="tab" data-p="flash" role="tab">Flashcards</button>
+<button class="tab" data-p="practice" role="tab">Practice</button>
+</div></nav>
+<main>
+
+<!-- ============ PAPERS ============ -->
+<section class="panel on" id="papers">
+<h2>Know your three papers</h2>
+<p class="lead">Every mark you earn lives in one of these. Learn the shape of each paper as well as you learn the content — examiners reward students who answer the question in front of them.</p>
+<div class="grid c3">
+<div class="card p1"><span class="chip paper">PAPER 1 · 01</span>
+<h3>Our Natural World</h3>
+<div class="meta">1h 15m · 70 marks · 35%</div>
+<ul class="tick"><li>Global Hazards</li><li>Changing Climate</li><li>Distinctive Landscapes</li><li>Sustaining Ecosystems</li><li><b>Section B:</b> physical fieldwork + geographical skills</li></ul>
+<div class="note"><b>SPaG:</b> 3 extra marks ride on this paper's highest-tariff question — write like it counts.</div></div>
+<div class="card p2"><span class="chip paper">PAPER 2 · 02</span>
+<h3>People and Society</h3>
+<div class="meta">1h 15m · 70 marks · 35%</div>
+<ul class="tick"><li>Urban Futures</li><li>Dynamic Development</li><li>UK in the 21st Century</li><li>Resource Reliance</li><li><b>Section B:</b> human fieldwork + geographical skills</li></ul>
+<div class="note"><b>Fieldwork:</b> you must name YOUR enquiry and use its real methods, data and conclusions. Vague = Level 1.</div></div>
+<div class="card p3"><span class="chip paper">PAPER 3 · 03</span>
+<h3>Geographical Exploration</h3>
+<div class="meta">1h 30m · 60 marks · 30%</div>
+<ul class="tick"><li>Synoptic: draws on ALL eight topics</li><li>Resource booklet on one country/place</li><li>Data, maps and graph skills throughout</li><li>Finishes with a <b>12-mark decision-making</b> question</li></ul>
+<div class="note"><b>Golden rule:</b> every answer must USE the resource booklet — quote figures, name places, read the maps.</div></div>
+</div>
+
+<div class="card" style="margin-top:16px">
+<h3>The tariff ladder — how marks are really earned</h3>
+<table class="tariff">
+<tr><th>Marks</th><th>Type</th><th>What earns it</th></tr>
+<tr><td><b>1–4</b></td><td>Short answer / skills</td><td>Precise point, correct calculation (<b>always show working</b>), accurate graph or map reading.</td></tr>
+<tr><td><b>6</b></td><td>Medium tariff · 3 levels</td><td>Developed explanation. Two or three points, each pushed: point → because → so → which means.</td></tr>
+<tr><td><b>8</b></td><td>High tariff · 3 levels</td><td>Extended response with case-study detail. Named places, real figures, developed chains of reasoning.</td></tr>
+<tr><td><b>12</b></td><td>High tariff · 4 levels (Paper 3)</td><td>Decision + justification. Take a side, argue it with booklet evidence, acknowledge the counterargument, conclude.</td></tr>
+</table>
+<div class="note"><b>Examiner intel:</b> the most common ceiling on 8-markers is "sound explanation, no place-specific detail." One real statistic or named location per paragraph is the cheapest upgrade in the exam.</div>
+</div>
+
+<div class="card p2" style="margin-top:16px">
+<h3>Command words — the question tells you the answer's shape</h3>
+<table class="tariff">
+<tr><th>Word</th><th>It means</th></tr>
+<tr><td><b>State / Identify / Name</b></td><td>One precise fact. No explanation needed — don't waste time.</td></tr>
+<tr><td><b>Describe</b></td><td>Say what it's like / what the pattern is. Use data: highs, lows, anomalies (TEA: Trend, Evidence, Anomaly).</td></tr>
+<tr><td><b>Explain</b></td><td>Give reasons — the how and why. Build chains: because → so → therefore.</td></tr>
+<tr><td><b>Suggest</b></td><td>Apply your knowledge to something unfamiliar. Plausible reasoning earns marks.</td></tr>
+<tr><td><b>Examine</b></td><td>Break the idea down and explore the relationships within it.</td></tr>
+<tr><td><b>Assess / Evaluate</b></td><td>Weigh it up — strengths AND weaknesses — then judge. No judgement, no top level.</td></tr>
+<tr><td><b>To what extent</b></td><td>Agree and disagree with evidence, then commit to a position and defend it.</td></tr>
+</table>
+</div>
+</section>
+
+<!-- ============ TOPICS ============ -->
+<section class="panel" id="topics">
+<h2>The eight topics + fieldwork</h2>
+<p class="lead">Each card is a topic health-check: the enquiry questions OCR examines, what you must know cold, your case-study slots, and the traps from real examiners' reports.</p>
+<div id="topiclist"></div>
+</section>
+
+<!-- ============ GLOSSARY ============ -->
+<section class="panel" id="glossary">
+<h2>Glossary</h2>
+<p class="lead">Tier 3 vocabulary, exam-definition tight. Using the correct term is often the difference between Level 2 and Level 3.</p>
+<div class="searchbar">
+<input id="gsearch" type="search" placeholder="Search terms…" aria-label="Search glossary">
+</div>
+<div class="pill-row" id="gfilters"></div>
+<div id="glist"></div>
+</section>
+
+<!-- ============ FLASHCARDS ============ -->
+<section class="panel" id="flash">
+<h2>Flashcards</h2>
+<p class="lead">Tap to flip. Be honest with the buttons — "Again" cards come back until they don't need to.</p>
+<div class="deck-grid" id="decks"></div>
+<div id="fcwrap" style="display:none">
+<div class="flash"><div class="fcard" id="fcard" tabindex="0" role="button" aria-label="Flashcard — tap to flip">
+<div class="face front"><div class="q" id="fq"></div><div class="hint">tap to flip</div></div>
+<div class="face back"><div class="a" id="fa"></div><div class="hint">tap to flip back</div></div>
+</div></div>
+<div class="fc-controls">
+<button class="btn again" id="fagain">Again ↺</button>
+<button class="btn ghost" id="fshuffle">Shuffle</button>
+<button class="btn got" id="fgot">Got it ✓</button>
+</div>
+<div class="fc-progress" id="fprog"></div>
+</div>
+</section>
+
+<!-- ============ PRACTICE ============ -->
+<section class="panel" id="practice">
+<h2>Practice</h2>
+<p class="lead">Quick-fire multiple choice by topic, then the extended-answer gym: real question shapes with the level descriptors examiners actually use.</p>
+<div class="pill-row" id="qtopics"></div>
+<div id="qarea"></div>
+<h2 style="margin-top:26px">The extended-answer gym</h2>
+<p class="lead">One of each beast. Write it in your book, then mark yourself against the levels like an examiner would.</p>
+<div id="msqs"></div>
+</section>
+</main>
+<footer>Geography for Enquiring Minds · OCR B (J384) revision companion · Harris Federation Geography · Check every case study against the ones taught in YOUR lessons. Not affiliated with OCR. v1 · Summer 2026.</footer>
+
+<script>
+/* ===================== DATA ===================== */
+const TOPICS=[
+{id:'GH',paper:1,name:'Global Hazards',eq:['How can weather be hazardous?','How do plate tectonics shape our world?'],
+must:['Global atmospheric circulation: Hadley, Ferrel and polar cells; how they create arid zones and tropical storms','Where and why tropical storms form (26.5°C+ ocean, Coriolis, low shear) and their structure','Drought: meteorological causes + El Niño/La Niña disruption','Plate boundaries: constructive, destructive, conservative, collision — processes and hazards at each','Why volcanoes and earthquakes happen where they do; shield vs composite volcanoes','How tectonic hazards are measured, and how places prepare, respond and adapt'],
+cs:['A natural weather-hazard event (e.g. a named tropical storm or drought) — causes, consequences, responses','A tectonic event — causes, consequences, responses'],
+trap:'Examiners report students confusing WEATHER hazards with CLIMATE change, and describing plate boundaries without naming the plates in their case study. Name the plates. Every time.'},
+{id:'CC',paper:1,name:'Changing Climate',eq:['What evidence is there to suggest climate change is a natural process?'],
+must:['Evidence for climate change over different timescales: ice cores, tree rings, historical/global temperature records','Natural causes: Milankovitch cycles, sunspots, volcanic eruptions','Human causes: fossil fuels, deforestation, agriculture — the enhanced greenhouse effect','Global impacts on people and environment, and why they are unevenly distributed','Impacts on the UK: weather extremes, sea level, economy'],
+cs:['No single required case study — but you need real, located examples of impacts worldwide and in the UK'],
+trap:'From the examiner\'s report: melting SEA ICE does not raise sea level (it\'s already floating). Say "melting land ice (glaciers, ice sheets) and thermal expansion." And write "increase", not "change".'},
+{id:'DL',paper:1,name:'Distinctive Landscapes',eq:['What makes a landscape distinctive?','What influences the landscapes of the UK?'],
+must:['What "landscape" means; the distribution of the UK\'s uplands, lowlands and rivers','Geology, climate and human activity as influences on landscape','Coastal processes: erosion (hydraulic action, abrasion, attrition, solution), transport (LSD), deposition','Coastal landforms: headlands/bays, caves-arches-stacks, beaches, spits','River processes and landforms: V-valleys, waterfalls, meanders, ox-bows, floodplains','How landforms change over time; management of one coastal and one river landscape'],
+cs:['One UK coastal landscape — landforms, processes, management','One UK river basin — landforms, processes, management'],
+trap:'Sequenced landform formation = marks. Learn each formation as numbered steps with the processes NAMED at each step, not as a story.'},
+{id:'SE',paper:1,name:'Sustaining Ecosystems',eq:['Why are natural ecosystems important?','Why should tropical rainforests matter to us?','Is there more to polar environments than ice?'],
+must:['Global ecosystems (biomes): distribution and climate drivers','Rainforest structure: climate, water/nutrient cycles, plant-animal interdependence and adaptations','Human impact on rainforests; sustainable vs unsustainable management','Polar environments: Antarctica and the Arctic — climate, features, adaptations','Human activity in polar regions and how it is managed (treaties, conservation, tourism rules)'],
+cs:['A tropical rainforest — value, threats, sustainable management attempt','A polar region example — human activity + small-scale sustainable management'],
+trap:'"Interdependence" questions want the CONNECTIONS (soil ↔ vegetation ↔ climate ↔ animals), not four separate descriptions.'},
+{id:'UF',paper:2,name:'Urban Futures',eq:['Why do more than half the world\'s population live in urban areas?','What are the challenges and opportunities for cities today?'],
+must:['Urbanisation trends in ACs, EDCs and LIDCs; the growth of megacities','Push-pull migration (internal + international) and its role in city growth','Urban processes: suburbanisation, counter-urbanisation, re-urbanisation','City case studies: influence, migration patterns, ways of life, challenges, sustainable initiatives'],
+cs:['A city in an AC — patterns, ways of life, challenges, sustainability','A city in an EDC or LIDC — same headings'],
+trap:'8-markers here die on vague cities. "Traffic is bad" scores nothing; a named scheme, a statistic, a district — that\'s Level 3 material.'},
+{id:'DD',paper:2,name:'Dynamic Development',eq:['Why are some countries richer than others?','Are LIDCs likely to stay poor?'],
+must:['Defining and measuring development: GNI per capita, HDI, internet users; limitations of single measures','Uneven development: physical, historical (colonialism, trade), economic and political causes','Rostow\'s stages of economic development — uses and limits','Aid: types (bilateral, multilateral, NGO, emergency, development) and whether aid works','Your LIDC\'s development journey: trade, TNCs, aid, debt relief, Millennium/Sustainable Development Goals'],
+cs:['One LIDC in depth — its development journey, barriers, aid, trade, future strategies'],
+trap:'Paper 3 loves this topic. Practise applying YOUR LIDC\'s lessons to an unfamiliar country in the resource booklet.'},
+{id:'UK',paper:2,name:'UK in the 21st Century',eq:['How is the UK changing in the 21st century?','Is the UK losing its global significance?'],
+must:['The UK\'s physical and human landscapes: relief, rainfall, population density, land use','Population: growth, ageing, the Demographic Transition Model applied to the UK','Uneven development within the UK: north-south differences, causes and responses','Economic change: de-industrialisation, the post-industrial economy, working patterns','The UK\'s global role: trade, culture, transport, electronic communication; media exports; political role'],
+cs:['One UK "place study" of economic change (often taught through your urban fieldwork location)'],
+trap:'Learn actual UK numbers: population ~68 million, ageing structure, where rain falls and why (relief + prevailing south-westerlies). Vague UK answers are the most common own-goal.'},
+{id:'RR',paper:2,name:'Resource Reliance',eq:['Will we run out of natural resources?','Can we feed nine billion people by 2050?'],
+must:['Rising demand for food, energy and water; how supply and demand create insecurity','Food security: definitions, measures (daily calorie intake, undernourishment), Malthus vs Boserup','Factors affecting food security: physical (climate, pests) and human (poverty, conflict, food waste)','Strategies to increase food security: sustainable and unsustainable, small and large scale','Your country study: attempts at achieving food security'],
+cs:['One country\'s attempt to achieve food security — past and present strategies, evaluated'],
+trap:'Malthus vs Boserup is a gift: two theories, one paragraph each, then a judgement. Learn it as your evaluation skeleton.'},
+{id:'FW',paper:0,name:'Fieldwork (Papers 1 & 2, Section B)',eq:['Physical enquiry (Paper 1) · Human enquiry (Paper 2)'],
+must:['The six-stage enquiry: question/hypothesis → methods/data → presentation → analysis → conclusion → evaluation','Why your hypothesis was suitable and how it links to geographical theory','Your methods: exactly what, where, when, sample size, sampling strategy (random / systematic / stratified) — and WHY','Data presentation choices and their limitations','What you found, what you concluded, and how reliable it really was','Evaluating: limitations of methods, accuracy of results, how you\'d improve it'],
+cs:['YOUR physical fieldwork enquiry (Paper 1)','YOUR human fieldwork enquiry (Paper 2) — know both by name'],
+trap:'The starred fieldwork questions are levels-marked on YOUR enquiry\'s specifics. "We counted people" = Level 1. "Systematic sampling every 5th passer-by at 6 sites, repeated 10am and 2pm" = Level 3.'},
+{id:'P3',paper:3,name:'Paper 3 · Geographical Exploration',eq:['One country. One booklet. Every topic you\'ve learned.'],
+must:['Skim the whole resource booklet FIRST (5 minutes) — know what\'s there before question 1','Every answer quotes the booklet: figures, place names, map evidence','Graph/map/data skills: describing distributions, calculating change, reading OS maps','The 12-mark decision question: choose an option, justify with booklet evidence + your own knowledge, weigh the alternative, conclude'],
+cs:['None to learn — but your taught case studies are your comparison ammunition ("this mirrors what happened in…")'],
+trap:'The classic Paper 3 fail: writing everything you know about a topic while ignoring the booklet. If your answer would work without the booklet, it\'s wrong.'}
+];
+
+const GLOSSARY=[
+['Abrasion','Erosion by rock fragments scraping/grinding against a surface (cliff or river bed).','DL'],
+['Adaptation (climate)','Adjusting to live with climate change impacts (e.g. flood defences) rather than preventing causes.','CC'],
+['Ageing population','A rising median age and growing share of over-65s in a population.','UK'],
+['Aid (bilateral)','Help given directly from one government to another.','DD'],
+['Aid (multilateral)','Aid channelled through international organisations like the World Bank or UN.','DD'],
+['Appropriate technology','Simple, affordable technology matched to local skills and needs.','DD'],
+['Arch','Coastal landform formed when a cave erodes through a headland.','DL'],
+['Atmospheric circulation','The global system of pressure cells (Hadley, Ferrel, Polar) redistributing heat from the equator.','GH'],
+['Attrition','Erosion where transported rocks collide, becoming smaller and rounder.','DL'],
+['Biome','A global-scale ecosystem, e.g. tropical rainforest, tundra.','SE'],
+['Birth rate','Live births per 1,000 people per year.','DD'],
+['Boserup','Theory that population growth drives innovation — "necessity is the mother of invention".','RR'],
+['Brownfield site','Previously built-on land available for redevelopment.','UF'],
+['Calorie intake (daily)','Average kilocalories consumed per person per day — a food security measure.','RR'],
+['Carbon footprint','Total greenhouse gases emitted by a person, product or activity.','RR'],
+['Collision boundary','Where two continental plates meet, folding crust into mountains (e.g. Himalayas).','GH'],
+['Composite volcano','Steep-sided volcano of alternating ash and lava layers at destructive margins; explosive.','GH'],
+['Conservative boundary','Plates sliding past each other; friction builds → earthquakes, no volcanoes.','GH'],
+['Constructive boundary','Plates moving apart; magma rises, creating new crust and shield volcanoes.','GH'],
+['Coriolis effect','Deflection of moving air by Earth\'s rotation — spins tropical storms.','GH'],
+['Counter-urbanisation','Movement of people from cities to rural areas.','UF'],
+['Death rate','Deaths per 1,000 people per year.','DD'],
+['Deforestation','Permanent removal of forest cover.','SE'],
+['De-industrialisation','Decline of manufacturing industry in an economy.','UK'],
+['Demographic Transition Model','Model showing how birth/death rates change as a country develops (stages 1–5).','UK'],
+['Deposition','Dropping of transported material when energy falls.','DL'],
+['Destructive boundary','Oceanic plate subducts beneath another; melting → composite volcanoes + earthquakes.','GH'],
+['Development','Progress in economic growth, use of technology and human welfare.','DD'],
+['Distribution','How something is spread across an area.','P3'],
+['Drought','A prolonged period of below-average precipitation.','GH'],
+['Ecosystem','A community of plants and animals interacting with each other and their physical environment.','SE'],
+['Ecotourism','Tourism designed to minimise environmental damage and benefit local people.','SE'],
+['El Niño','Periodic warming of the eastern Pacific that disrupts global weather patterns.','GH'],
+['Emergency aid','Short-term aid after a disaster: food, water, shelter, medicine.','DD'],
+['Energy security','Reliable access to affordable energy.','RR'],
+['Enhanced greenhouse effect','Extra warming caused by human additions of greenhouse gases.','CC'],
+['Enquiry','A structured geographical investigation: question → data → analysis → conclusion → evaluation.','FW'],
+['Erosion','Wearing away and removal of material by water, wind or ice.','DL'],
+['Evaluation','Judging strengths and weaknesses to reach a supported conclusion.','FW'],
+['Fairtrade','Trading partnership guaranteeing producers a fair minimum price.','DD'],
+['Ferrel cell','Mid-latitude circulation cell between the Hadley and Polar cells.','GH'],
+['Flood plain','Flat land beside a river built from deposited silt during floods.','DL'],
+['Food miles','Distance food travels from producer to consumer.','RR'],
+['Food security','When all people at all times have access to sufficient, safe, nutritious food.','RR'],
+['Fossil fuels','Coal, oil and gas — carbon-rich fuels from ancient organic matter.','CC'],
+['Geology','The rock types and structures of an area.','DL'],
+['Globalisation','Growing interconnection of the world\'s economies, cultures and populations.','UK'],
+['GNI per capita','Gross National Income divided by population — a wealth measure.','DD'],
+['Greenfield site','Land not previously built on.','UF'],
+['Hadley cell','Tropical circulation cell: rising air at the equator, sinking ~30° N/S.','GH'],
+['Hard engineering','Built structures controlling natural processes (sea walls, groynes, dams).','DL'],
+['HDI','Human Development Index — combines life expectancy, education and income (0–1).','DD'],
+['Hydraulic action','Erosion by the sheer force of water compressing air into cracks.','DL'],
+['Hypothesis','A testable statement predicting a relationship or difference.','FW'],
+['Ice core','Cylinder drilled from an ice sheet whose trapped air records past atmospheres.','CC'],
+['Infant mortality','Deaths of under-1s per 1,000 live births per year.','DD'],
+['Informal settlement','Housing built without legal ownership or planning (squatter settlement).','UF'],
+['Interdependence','Two-way reliance between parts of a system (or between countries).','SE'],
+['Internal growth','City population growth from births exceeding deaths within the city.','UF'],
+['La Niña','Cooling phase of the Pacific cycle — often strengthens droughts/floods elsewhere.','GH'],
+['Landscape','An area whose character results from physical and human features acting together.','DL'],
+['LIDC','Low Income Developing Country (World Bank classification).','DD'],
+['Longshore drift','Zigzag transport of sediment along a coast by angled swash and straight backwash.','DL'],
+['Malthus','Theory that population growth will outstrip food supply, causing catastrophe.','RR'],
+['Mass movement','Downhill movement of material under gravity (sliding, slumping).','DL'],
+['Meander','A bend in a river formed by erosion on the outer bank and deposition on the inner.','DL'],
+['Megacity','A city of more than 10 million people.','UF'],
+['Migration','Movement of people to live in a new place.','UF'],
+['Milankovitch cycles','Long-term changes in Earth\'s orbit and tilt affecting climate.','CC'],
+['Millennium Development Goals','Eight UN goals (2000–2015) targeting poverty, health and education.','DD'],
+['Mitigation','Tackling the causes of climate change (e.g. cutting emissions).','CC'],
+['Natural increase','Birth rate minus death rate.','UF'],
+['North-south divide','Economic and social differences between the north and south of the UK.','UK'],
+['Nutrient cycle','Movement of nutrients between soil, biomass and litter in an ecosystem.','SE'],
+['Ox-bow lake','Crescent lake left when a meander neck is cut through and sealed off.','DL'],
+['Polar cell','High-latitude circulation cell of sinking cold air at the poles.','GH'],
+['Post-industrial economy','Economy dominated by services, information and knowledge rather than manufacturing.','UK'],
+['Prevailing wind','The most frequent wind direction for a place (UK: south-westerly).','UK'],
+['Push-pull factors','Negatives driving people from a place / positives attracting them to another.','UF'],
+['Quality of life','Overall wellbeing: wealth, health, education, environment, security.','DD'],
+['Re-urbanisation','Movement of people back into city centres after decline.','UF'],
+['Reliability','How much data can be trusted — would repeating it give the same result?','FW'],
+['Resource reliance','Dependence of people and economies on food, water and energy supplies.','RR'],
+['Rostow\'s model','Five-stage model of economic development from traditional society to mass consumption.','DD'],
+['Sampling (random)','Every member of a population has an equal chance of selection.','FW'],
+['Sampling (stratified)','Sampling in proportion to known sub-groups of a population.','FW'],
+['Sampling (systematic)','Sampling at regular intervals (every 5th person, every 10 metres).','FW'],
+['Shield volcano','Broad, gently sloping volcano of runny lava at constructive margins.','GH'],
+['Soft engineering','Working with natural processes (beach nourishment, managed retreat, afforestation).','DL'],
+['Spit','A ridge of sand/shingle extending from land into the sea, formed by longshore drift.','DL'],
+['Subduction','An oceanic plate sinking beneath another plate into the mantle.','GH'],
+['Suburbanisation','Outward growth of towns and cities into surrounding areas.','UF'],
+['Sustainable development','Meeting present needs without compromising future generations.','SE'],
+['Sustainable Development Goals','Seventeen UN goals (2015–2030) succeeding the MDGs.','DD'],
+['Thermal expansion','Sea water expanding as it warms — a major cause of sea-level rise.','CC'],
+['TNC','Transnational corporation — a company operating in multiple countries.','DD'],
+['Trade deficit','Importing more (by value) than is exported.','UK'],
+['Tropical storm','Intense low-pressure system over warm oceans with winds ≥ 119 km/h.','GH'],
+['Undernourishment','Not consuming enough calories for a healthy, active life.','RR'],
+['Urbanisation','An increasing PROPORTION of a population living in urban areas.','UF'],
+['Water security','Reliable access to sufficient safe water.','RR'],
+['Weather hazard','A short-term atmospheric event threatening life or property.','GH'],
+['Wilderness','A wild, undeveloped natural region largely untouched by humans.','SE']
+];
+
+const DECKS={
+GH:[['Name the three global circulation cells.','Hadley (0–30°), Ferrel (30–60°), Polar (60–90°).'],
+['Conditions needed for a tropical storm to form?','Ocean ≥ 26.5°C to ~60m depth, 5–30° latitude (Coriolis spin), low wind shear, converging air.'],
+['What happens at a destructive plate boundary?','Denser oceanic plate subducts under another; friction + melting → earthquakes and explosive composite volcanoes.'],
+['What happens at a constructive boundary?','Plates diverge; magma rises to fill the gap → new crust, shield volcanoes, gentle quakes.'],
+['Why do conservative boundaries have earthquakes but no volcanoes?','Plates slide past each other — friction builds and releases (quakes) but no crust melts or is created.'],
+['What is El Niño?','Periodic warming of the eastern Pacific reversing normal pressure patterns — brings drought to Australia/Asia, floods to the Americas.'],
+['Shield vs composite volcano?','Shield: runny basaltic lava, wide + gentle, constructive margins. Composite: sticky lava + ash layers, steep, explosive, destructive margins.'],
+['Two ways places PREPARE for tectonic hazards?','Earthquake-resistant buildings/drills; monitoring + warning systems; evacuation planning; hazard mapping.'],
+['What is a drought?','A prolonged period of rainfall well below average for a place.'],
+['How does the Coriolis effect shape storms?','Earth\'s rotation deflects moving air, giving tropical storms their spin — which is why they don\'t form on the equator.']],
+CC:[['Three types of evidence for past climate change?','Ice cores, tree rings, historical records (+ global temperature measurements).'],
+['Name three NATURAL causes of climate change.','Milankovitch orbital cycles, sunspot activity, volcanic eruptions.'],
+['Name three HUMAN causes of climate change.','Burning fossil fuels, deforestation, agriculture (methane from livestock/rice).'],
+['Why does melting SEA ice not raise sea level?','It\'s already floating and displacing its own mass — only LAND ice (glaciers, ice sheets) and thermal expansion raise sea level.'],
+['What is the enhanced greenhouse effect?','Human emissions increase greenhouse gases, trapping extra outgoing heat and warming the planet beyond the natural effect.'],
+['What is thermal expansion?','Water expands as it warms — a major contributor to sea-level rise.'],
+['One climate change impact on the UK?','More frequent extreme weather (storms/floods/heatwaves); coastal flooding risk; changing farming seasons.'],
+['Mitigation vs adaptation?','Mitigation tackles causes (cut emissions); adaptation adjusts to impacts (build defences).'],
+['What do ice cores actually record?','Bubbles of ancient air — CO₂ and methane concentrations — plus temperature evidence, layer by yearly layer.'],
+['Why are climate impacts uneven globally?','Low-lying/poorer nations face bigger hazards with fewer resources to adapt — vulnerability ≠ emissions.']],
+DL:[['Four processes of coastal erosion?','Hydraulic action, abrasion, attrition, solution.'],
+['Describe longshore drift.','Swash carries sediment up the beach at the prevailing wind\'s angle; backwash drags it straight back — sediment zigzags along the coast.'],
+['Cave → arch → stack sequence?','Erosion widens a fault into a cave; cave cuts through the headland = arch; arch roof collapses = stack; stack erodes = stump.'],
+['How does a spit form?','Longshore drift carries sediment past a bend in the coastline; sediment deposits in open water, building a ridge; the end curves with wind changes.'],
+['How does a waterfall retreat?','Soft rock beneath hard rock erodes; overhang collapses; plunge pool deepens; the fall migrates upstream leaving a gorge.'],
+['How does an ox-bow lake form?','Erosion on outer meander banks narrows the neck; a flood cuts through; deposition seals the old loop off as a lake.'],
+['Hard vs soft engineering at the coast?','Hard: sea walls, groynes, rock armour — strong, expensive, unnatural. Soft: beach nourishment, managed retreat — cheaper, sustainable, less certain.'],
+['Two influences on UK landscapes besides geology?','Climate (rainfall, freeze-thaw) and human activity (farming, settlement, quarrying).'],
+['What is mass movement?','Downslope movement of rock/soil under gravity — sliding and slumping — often after rain undercuts or lubricates a cliff.'],
+['Erosion vs weathering?','Weathering breaks rock down in place; erosion wears away AND removes material.']],
+SE:[['What controls where biomes are found?','Climate — temperature and precipitation patterns set by latitude and global circulation.'],
+['Why are rainforest soils surprisingly poor?','Nutrients cycle rapidly into biomass; heavy rain leaches the soil — most fertility is in the vegetation, not the ground.'],
+['Two plant adaptations to rainforest life?','Buttress roots (support), drip-tip leaves (shed water), lianas climbing for light, epiphytes living on branches.'],
+['Why do rainforests matter globally?','Carbon storage, oxygen and rainfall generation, biodiversity, medicines, indigenous homelands, resources.'],
+['Two threats to tropical rainforests?','Logging, cattle ranching/agriculture, mining, road building, settlement.'],
+['What makes forest management SUSTAINABLE?','It maintains the forest for future generations: selective logging, ecotourism, agroforestry, protected reserves, community involvement.'],
+['Antarctica vs the Arctic — key difference?','Antarctica: a continent surrounded by ocean, no permanent population, treaty-protected. Arctic: an ocean surrounded by land, ~4 million people, resource pressures.'],
+['Two adaptations of polar species?','Blubber/thick fur for insulation, small extremities to reduce heat loss, camouflage, seasonal migration.'],
+['One way human activity in polar regions is managed?','Antarctic Treaty (science only, no military/mining), fishing quotas, tourism codes of conduct.'],
+['What is interdependence in an ecosystem?','Components rely on each other in both directions — climate feeds vegetation, vegetation feeds soils and animals, and changes cascade.']],
+UF:[['Define urbanisation.','An increasing PROPORTION of a country\'s population living in urban areas.'],
+['Where is urbanisation fastest today?','LIDCs and EDCs — especially Africa and Asia; AC urbanisation has largely levelled off.'],
+['What is a megacity?','A city with more than 10 million residents.'],
+['Push vs pull factors?','Push drives people out (drought, conflict, no jobs); pull attracts them (work, services, safety, family).'],
+['Suburbanisation vs counter-urbanisation?','Suburbanisation: growth at the city edge. Counter-urbanisation: leaving the city for rural areas altogether.'],
+['What is re-urbanisation?','People moving back into city centres — often after regeneration investment.'],
+['Two ways migration changes a city\'s way of life?','New food/culture/festivals, multilingual communities, pressure on housing/services, youthful workforce.'],
+['What is an informal settlement?','Housing built without legal title or planning permission, common on city edges in LIDCs/EDCs.'],
+['Internal growth of a city means…?','Growth from natural increase — births exceeding deaths — rather than migration.'],
+['One feature of a "sustainable" city initiative?','Public transport investment, affordable housing, green space, waste/recycling systems, renewable energy.']],
+DD:[['Three measures of development?','GNI per capita, HDI, life expectancy, infant mortality, literacy, internet users.'],
+['Why is GNI per capita alone misleading?','It\'s an average — hides inequality, informal economies and says nothing about health or education.'],
+['What is the HDI?','Human Development Index: combines life expectancy, education and income into a 0–1 score.'],
+['Name Rostow\'s five stages.','Traditional society → preconditions for take-off → take-off → drive to maturity → high mass consumption.'],
+['Two criticisms of Rostow?','Assumes all countries follow the Western path; ignores colonialism, debt, environment; based on limited historical cases.'],
+['Bilateral vs multilateral aid?','Bilateral: government to government. Multilateral: through international bodies (World Bank, UN).'],
+['Two barriers to LIDC development?','Colonial legacy, unfair trade terms, debt, conflict, landlocked geography, climate/health burdens.'],
+['How can TNCs help AND harm an LIDC?','Help: jobs, investment, skills, taxes. Harm: low wages, profits leave, environmental damage, dependency.'],
+['What were the MDGs?','Eight UN Millennium Development Goals (2000–2015) targeting poverty, education, health and environment; succeeded by 17 SDGs.'],
+['What is Fairtrade?','A trading arrangement guaranteeing producers a fair minimum price plus a community premium.']],
+UK:[['Where does most UK rain fall, and why?','The north and west — relief rainfall as prevailing south-westerlies rise over upland Britain.'],
+['Why is the UK\'s population ageing?','Longer life expectancy + lower birth rates — a bigger share of over-65s.'],
+['Two consequences of an ageing UK population?','Rising pension/health costs, care demand, smaller workforce share — but also a "grey economy" and volunteering capacity.'],
+['What is de-industrialisation?','The decline of manufacturing employment and output, as the UK shifted to services.'],
+['What is the post-industrial economy?','An economy led by services, finance, IT, research and the knowledge sector rather than factories.'],
+['Evidence of the UK\'s north-south divide?','Higher average incomes, house prices and life expectancy in the south; responses include devolution and investment programmes.'],
+['Three ways the UK stays globally significant?','Trade links, media/cultural exports, the City\'s finance role, transport hubs, diplomacy (UN Security Council, G7).'],
+['How have UK working patterns changed?','More flexible, part-time and remote work; more self-employment; decline of heavy industry jobs.'],
+['UK population is roughly…?','About 68 million, densest in London and the south-east.'],
+['What is the Demographic Transition Model?','A model of how birth and death rates fall as countries develop, moving population growth through five stages.']],
+RR:[['Define food security.','All people, at all times, having physical and economic access to sufficient, safe, nutritious food.'],
+['Two measures of food security?','Average daily calorie intake; percentage of population undernourished; Global Hunger Index.'],
+['Malthus\'s argument?','Population grows faster than food supply, so unchecked growth ends in famine and crisis.'],
+['Boserup\'s reply?','Population pressure drives innovation — humans invent their way to higher food production.'],
+['Two PHYSICAL factors reducing food security?','Drought/climate extremes, pests and disease, poor soils, water scarcity.'],
+['Two HUMAN factors reducing food security?','Poverty, conflict, food waste, rising demand, poor infrastructure, land used for biofuels.'],
+['One small-scale strategy for food security?','Rainwater harvesting, drip irrigation, urban gardens, seed banks, permaculture.'],
+['One large-scale strategy — and a downside?','Irrigation mega-projects/GM crops/green revolution: higher yields, but costly, environmental side-effects, can bypass the poorest.'],
+['What is undernourishment?','Consistently consuming too few calories for a healthy active life.'],
+['Why will feeding 9 billion be hard?','Population growth + richer diets + climate stress + finite land/water — demand rises as supply is squeezed.']],
+FW:[['The six enquiry stages, in order?','Question/hypothesis → methods & data collection → presentation → analysis → conclusion → evaluation.'],
+['Three tests of a good hypothesis?','Measurable, directional (states a relationship/difference), falsifiable.'],
+['Random vs systematic vs stratified sampling?','Random: equal chance for all. Systematic: regular intervals. Stratified: in proportion to known sub-groups.'],
+['Why choose systematic sampling?','Removes selection bias and spreads coverage evenly — every 5th person / every 10 metres.'],
+['What makes data RELIABLE?','Repeatability: bigger samples, repeated counts, consistent method, multiple sites/times.'],
+['One limitation of a questionnaire?','Small/biased sample, dishonest or rushed answers, time of day skews who you ask.'],
+['One limitation of an environmental quality survey?','Subjective scoring — different people rate the same street differently; fix with agreed criteria and paired scoring.'],
+['What belongs in an evaluation?','Method limitations, data reliability, unexpected problems, and specific improvements — with a judgement on how far conclusions can be trusted.'],
+['How do you describe a graph like an examiner wants?','TEA: overall Trend, quoted Evidence (figures), Anomalies — then explain if asked.'],
+['Why does your conclusion need to loop back?','It must answer the original question/hypothesis directly — supported, rejected, or partially supported, with evidence.']]
+};
+
+const MCQ={
+GH:[
+['Tropical storms form only where ocean temperatures exceed…',['16.5°C','26.5°C','36.5°C','6.5°C'],1,'Warm water ≥ ~26.5°C provides the energy (latent heat) that powers the storm.'],
+['At which boundary is new crust created?',['Destructive','Conservative','Constructive','Collision'],2,'Plates diverge and magma rises to fill the gap — new oceanic crust.'],
+['Which cell sits between 0° and 30° latitude?',['Ferrel','Polar','Hadley','Jet'],2,'The Hadley cell: rising air at the equator, sinking around 30°.'],
+['Composite volcanoes are typically found at…',['Constructive margins','Destructive margins','Conservative margins','Hot deserts'],1,'Subduction creates viscous, gas-rich magma — steep, explosive cones.'],
+['Earthquakes but NO volcanoes occur at…',['Constructive boundaries','Destructive boundaries','Conservative boundaries','Collision boundaries — trick: these also lack volcanoes'],2,'Conservative: plates slide past, friction builds, no melting. (Collision zones also lack volcanoes but are defined by fold mountains.)'],
+['El Niño involves unusual warming of the…',['Western Pacific','Eastern Pacific','North Atlantic','Indian Ocean'],1,'Warm water shifts east, reversing pressure systems and global weather patterns.'],
+['Why don\'t tropical storms form on the equator itself?',['Water is too cold','No Coriolis effect to spin them','Too much land','Air pressure is too high'],1,'Coriolis force is zero at the equator — storms need 5°+ latitude to rotate.'],
+['The zigzag movement of sediment... wait, that\'s coasts! Which measures earthquake energy?',['Richter/Moment magnitude','Beaufort scale','Saffir-Simpson','pH scale'],0,'Magnitude scales measure energy released; Saffir-Simpson is for hurricanes, Beaufort for wind.']],
+CC:[
+['Which is NOT evidence of past climate?',['Ice cores','Tree rings','Historical paintings of frost fairs','Yesterday\'s weather forecast'],3,'A forecast predicts; ice cores, tree rings and records document past climate.'],
+['Milankovitch cycles concern…',['Sunspot numbers','Earth\'s orbit and tilt','Volcanic ash','Ocean currents'],1,'Long-term orbital changes alter how much solar energy Earth receives.'],
+['Melting of which raises sea level?',['Floating sea ice','Land-based ice sheets','Icebergs already at sea','Frozen lakes'],1,'Land ice adds new water to oceans; floating ice already displaces its mass.'],
+['The main human-caused greenhouse gas is…',['Oxygen','Carbon dioxide','Nitrogen','Argon'],1,'CO₂ from fossil fuels and deforestation drives the enhanced greenhouse effect.'],
+['Thermal expansion means…',['Ice melting faster','Warm water taking up more space','Rivers evaporating','Glaciers advancing'],1,'Warming seawater expands — a major share of observed sea-level rise.'],
+['Cutting emissions is an example of…',['Adaptation','Mitigation','Evaluation','Subduction'],1,'Mitigation tackles causes; adaptation adjusts to impacts.'],
+['Volcanic eruptions can cool climate because…',['Lava freezes the air','Ash and aerosols reflect sunlight','They stop the wind','They melt sea ice'],1,'Sulphate aerosols reflect incoming solar radiation for months to years.'],
+['In calculations on this paper you must always…',['Round to whole numbers','Show your working','Use a calculator','Answer in km'],1,'Examiner reports are blunt: correct answers with no working can lose marks.']],
+DL:[
+['Which is NOT a coastal erosion process?',['Hydraulic action','Attrition','Longshore drift','Solution'],2,'Longshore drift is TRANSPORT, not erosion.'],
+['The correct headland sequence is…',['Stack→arch→cave→stump','Cave→arch→stack→stump','Arch→cave→stump→stack','Cave→stack→arch→stump'],1,'Erosion enlarges a cave through the headland (arch), the roof falls (stack), the stack erodes (stump).'],
+['A spit forms mainly because of…',['Hydraulic action','Longshore drift + a change in coastline direction','Freeze-thaw','Tidal waves'],1,'Drift carries sediment past a bend and deposits it in open water.'],
+['Meanders erode fastest on the…',['Inner bank','Outer bank','River bed only','Floodplain'],1,'Fastest flow (thalweg) swings to the outside — erosion outside, deposition inside.'],
+['Waterfalls retreat upstream because…',['Hard rock erodes first','Soft rock beneath is undercut and the overhang collapses','The river flows backwards','Deposition builds them up'],1,'Undercutting of softer rock collapses the resistant cap rock, step by step, leaving a gorge.'],
+['Beach nourishment is an example of…',['Hard engineering','Soft engineering','Managed retreat','Zoning'],1,'Working with natural processes by adding sediment — softer than concrete.'],
+['UK uplands are mostly found in the…',['South and east','North and west','Midlands','Coastal south'],1,'Harder, older rocks in the north/west; younger, softer lowlands in the south/east.'],
+['Attrition results in sediment that is…',['Larger and rougher','Smaller and rounder','Heavier','Magnetised'],1,'Particles collide with each other, chipping and smoothing them.']],
+SE:[
+['Biome distribution is controlled mainly by…',['Governments','Climate','Oceans','Soil colour'],1,'Temperature and rainfall patterns — set by latitude and circulation — decide the vegetation.'],
+['Most rainforest nutrients are stored in…',['Deep soil','The biomass (vegetation)','Rivers','Bedrock'],1,'Rapid cycling + leaching leaves soils poor; fertility lives in the plants.'],
+['Drip-tip leaves help plants…',['Store water','Shed heavy rainfall quickly','Catch insects','Reflect sunlight'],1,'Fast run-off prevents algae/fungi growth and leaf damage.'],
+['Which is a SUSTAINABLE forest use?',['Clear felling','Selective logging with replanting','Open-cast mining','Slash and burn at scale'],1,'Selective logging preserves the canopy and future value.'],
+['Antarctica is best described as…',['An ocean surrounded by land','A continent surrounded by ocean','A country','An archipelago'],1,'The Arctic is the ocean-surrounded-by-land one — a classic mix-up.'],
+['The Antarctic Treaty primarily…',['Encourages mining','Reserves the continent for peaceful scientific use','Bans tourism completely','Divides it between nations'],1,'Science and peace; mining banned; military activity prohibited.'],
+['Blubber is an adaptation for…',['Camouflage','Insulation','Speed','Digestion'],1,'A thick fat layer retains heat in freezing water.'],
+['"Interdependence" in an ecosystem means…',['Species compete','Components rely on each other in both directions','Plants grow independently','Animals migrate'],1,'Soil, climate, plants and animals are linked — change one, the others respond.']],
+UF:[
+['Urbanisation means…',['Cities getting richer','A rising PROPORTION of people living in urban areas','More skyscrapers','Rural depopulation only'],1,'It\'s about the share of population, not the size of buildings.'],
+['A megacity has more than…',['1 million people','5 million people','10 million people','50 million people'],2,'10 million+ — most new megacities are in Asia and Africa.'],
+['Which is a PUSH factor?',['Better-paid jobs in the city','Drought destroying farm income','Family already in the city','University places'],1,'Push factors drive people FROM a place; the others pull them toward one.'],
+['Counter-urbanisation is movement…',['Into city centres','From cities to rural areas','Between suburbs','To megacities'],1,'Out of the city altogether — enabled by commuting and remote work.'],
+['Urbanisation is currently fastest in…',['ACs','EDCs and LIDCs','Europe','North America'],1,'AC city growth has slowed; Africa and Asia are urbanising rapidly.'],
+['Internal growth of a city comes from…',['Migration','Natural increase (births > deaths)','Boundary changes','Tourism'],1,'Young migrant populations then amplify it by having children in the city.'],
+['Re-urbanisation is often triggered by…',['Factory closures','City-centre regeneration investment','Rural broadband','Flooding'],1,'Investment, culture and housing pull people (often young professionals) back in.'],
+['An informal settlement is…',['Government housing','Housing built without legal title or planning','A gated community','Student halls'],1,'Common on the urban edge in LIDCs/EDCs — services often lag behind.']],
+DD:[
+['HDI combines income, education and…',['Population size','Life expectancy','Internet speed','Exports'],1,'The three-part index runs from 0 to 1.'],
+['GNI per capita can mislead because…',['It counts children','It\'s an average that hides inequality','It excludes farming','It\'s measured in euros'],1,'Averages conceal distribution — and informal economies go uncounted.'],
+['Rostow\'s third stage is…',['Traditional society','Take-off','High mass consumption','Preconditions'],1,'Traditional → preconditions → TAKE-OFF → maturity → mass consumption.'],
+['Aid from the UK government directly to Ghana\'s government is…',['Multilateral','Bilateral','NGO aid','Tied trade'],1,'Government-to-government = bilateral; via UN/World Bank = multilateral.'],
+['Which is a common barrier to LIDC development?',['Too many exports','Colonial legacy and unfair trade terms','Excess rainfall','Youthful optimism'],1,'History, debt and trade structures can lock in disadvantage.'],
+['A TNC is…',['A trade tax','A company operating across multiple countries','A UN agency','A tariff'],1,'Transnational corporations bring investment — and controversy.'],
+['The SDGs number…',['8 goals','17 goals','100 goals','3 goals'],1,'Seventeen Sustainable Development Goals (2015–2030), succeeding the eight MDGs.'],
+['Fairtrade guarantees producers…',['Free shipping','A fair minimum price','Government jobs','Tax exemption'],1,'Plus a community premium invested locally.']],
+UK:[
+['Most UK rainfall lands in the…',['South-east','North and west','Midlands','East Anglia'],1,'Relief rainfall: moist south-westerlies rise over western uplands.'],
+['The UK population is closest to…',['48 million','58 million','68 million','78 million'],2,'~68 million, densest in London and the south-east.'],
+['An ageing population means…',['More births','A rising share of over-65s','Falling life expectancy','More schools needed'],1,'Longer lives + lower birth rates shift the age structure upward.'],
+['De-industrialisation describes…',['Factory automation','The decline of manufacturing employment','Building new industry','Farming reform'],1,'The UK\'s shift from making things to services — with regional scars.'],
+['A post-industrial economy is dominated by…',['Mining','Services and knowledge work','Heavy manufacturing','Agriculture'],1,'Finance, IT, research, media, education, health.'],
+['Which is evidence of the north-south divide?',['Identical house prices','Higher average incomes in the south','More rain in the south','Equal life expectancy'],1,'Income, property and health indicators all show the gradient.'],
+['The UK\'s prevailing winds come from the…',['North-east','South-west','East','North'],1,'Warm, moist Atlantic air — the engine of relief rainfall.'],
+['One pillar of continuing UK global influence?',['Its size','Media and cultural exports','Its climate','Its mountains'],1,'Music, film, English language, the City, diplomacy, universities.']],
+RR:[
+['Food security exists when…',['Food is cheap','All people always access sufficient safe nutritious food','A country exports food','Farms are large'],1,'The FAO definition — access, sufficiency, safety, at all times.'],
+['Malthus predicted…',['Innovation saves us','Population outgrows food supply','Endless abundance','Falling birth rates'],1,'Geometric population growth vs arithmetic food growth → crisis.'],
+['Boserup argued…',['The same as Malthus','Necessity drives agricultural innovation','Food doesn\'t matter','Population will fall'],1,'"Necessity is the mother of invention" — pressure creates solutions.'],
+['Which is a HUMAN factor in food insecurity?',['Drought','Conflict disrupting farming','Locust swarms','Poor soils'],1,'War, poverty and waste are human; drought, pests and soils are physical.'],
+['Undernourishment means…',['Eating no vegetables','Consistently too few calories for healthy life','Skipping breakfast','Food allergies'],1,'A chronic calorie deficit — the core hunger measure.'],
+['A SMALL-scale food security strategy is…',['A mega-dam','Drip irrigation on village plots','National GM programme','Doubling imports'],1,'Local, cheap, appropriate technology in community hands.'],
+['One downside of large-scale irrigation schemes?',['Too simple','High cost and environmental side-effects','Nobody uses water','They reduce yields'],1,'Salinisation, displacement and debt can accompany the gains.'],
+['Daily calorie intake is used to measure…',['Wealth','Food security','Rainfall','Literacy'],1,'Averages below ~2,000–2,500 kcal signal insecurity.']],
+FW:[
+['The first stage of an enquiry is…',['Data presentation','Question/hypothesis','Evaluation','Conclusion'],1,'Everything flows from a precise, testable question.'],
+['A good hypothesis must be…',['Long','Measurable, directional and falsifiable','About your school','Guaranteed true'],1,'If data couldn\'t prove it wrong, it isn\'t a hypothesis.'],
+['Sampling every 8th passer-by is…',['Random','Systematic','Stratified','Opportunistic'],1,'Regular intervals = systematic; it removes chooser bias.'],
+['Reliability improves with…',['Smaller samples','Repetition and larger samples','Better weather','Faster counting'],1,'Repeat counts, more sites, consistent methods.'],
+['An environmental quality survey\'s weakness is…',['Too objective','Subjective scoring','It uses numbers','It\'s illegal'],1,'Different judges, different scores — mitigate with agreed criteria and paired judging.'],
+['Describing a graph, TEA stands for…',['Time, Errors, Axes','Trend, Evidence, Anomaly','Title, Estimate, Answer','Total, Extra, Average'],1,'State the trend, quote figures, flag the exceptions.'],
+['Your conclusion must…',['Introduce new data','Directly answer the original hypothesis','Be one word','List methods'],1,'Supported / rejected / partially — with the evidence that says so.'],
+['Fieldwork questions marked with * are assessed on…',['Handwriting','The specific detail of YOUR enquiry','Speed','Colouring'],1,'Named location, real methods, real figures — vagueness caps you at Level 1.']],
+P3:[
+['Your first move in Paper 3 is to…',['Answer Q1 instantly','Skim the whole resource booklet','Write the 12-marker','Leave'],1,'Five minutes of orientation pays back on every question.'],
+['Every Paper 3 answer should…',['Ignore the booklet','Use booklet evidence: figures, places, maps','Be one sentence','Quote your teacher'],1,'If your answer works without the booklet, it\'s the wrong answer.'],
+['The 12-mark decision question requires you to…',['Sit on the fence','Choose an option and justify it, weighing alternatives','List all options equally','Refuse to decide'],1,'Decision + justification + counterargument + conclusion = Level 4 shape.'],
+['Paper 3 is worth…',['70 marks / 35%','60 marks / 30%','100 marks / 50%','40 marks / 20%'],1,'60 marks, 1h30 — the synoptic decision-making exercise.'],
+['Paper 3 draws on…',['Only Paper 1 topics','Only fieldwork','ALL eight topics','None of the course'],2,'Synoptic means everything is fair game, applied to one place.'],
+['Your taught case studies help in Paper 3 by…',['Replacing the booklet','Providing comparisons to the booklet country','Filling time','Providing quotes'],1,'"This mirrors what happened in [your case study]…" earns application marks.'],
+['SPaG marks on each paper attach to…',['Every question','The highest-tariff question','Question 1','MCQs'],1,'Three SPaG marks ride on the biggest question — proof-read it.'],
+['12-mark answers are marked over…',['2 levels','3 levels','4 levels','No levels'],2,'Four levels; 8-markers use three. Judgement and development separate them.']]
+};
+
+const MSQS=[
+{p:1,q:'Explain how one landform of coastal erosion is formed. You may use a labelled diagram.',m:6,
+lv:['L3 (5–6): full, sequenced formation with processes correctly NAMED at each step (e.g. hydraulic action widening the fault → cave → arch → collapse → stack).','L2 (3–4): partial sequence or processes named but not linked to stages.','L1 (1–2): simple statements; processes missing or wrong.'],
+tip:'AO1 knowledge + AO2 understanding. Number your steps. A quick labelled diagram can carry the whole sequence.'},
+{p:1,q:'"The impacts of climate change are greater for some countries than others." Discuss this statement. [8 + 3 SPaG]',m:8,
+lv:['L3 (6–8): developed discussion BOTH ways with located, specific detail (low-lying nations, adaptive capacity, emitters vs sufferers) and a clear line of argument.','L2 (3–5): some discussion, thin support, may drift one-sided.','L1 (1–2): generic statements about climate change.'],
+tip:'AO2 + AO3. Two developed paragraphs (why unequal / any counterview), each with a real place, then commit to a judgement. Proof-read: SPaG lives here.'},
+{p:2,q:'Evaluate the success of one strategy used to improve food security in your case study country. [8]',m:8,
+lv:['L3 (6–8): strategy named and located; successes AND limitations developed with specifics (figures, dates, who benefited); supported judgement.','L2 (3–5): describes the strategy with partial evaluation.','L1 (1–2): generic strategy, no place detail, no judgement.'],
+tip:'AO3 evaluation on a case study. Structure: what + where → evidence it worked → evidence it didn\'t/limits → "overall, successful because…"'},
+{p:2,q:'Explain how your human fieldwork data collection methods produced reliable results. [6*]',m:6,
+lv:['L3 (5–6): named enquiry; methods described with specifics (sample size, sampling strategy, sites, timings) explicitly LINKED to reliability.','L2 (3–4): methods described, reliability link asserted not explained.','L1 (1–2): vague methods, no enquiry specifics.'],
+tip:'The * means YOUR enquiry\'s detail is the mark scheme. "Systematic sampling of every 5th pedestrian at six sites, repeated at 10am and 2pm, increased reliability because…"'},
+{p:3,q:'Using the resource booklet and your own knowledge, decide which option the country should choose. Justify your decision. [12]',m:12,
+lv:['L4 (10–12): clear decision; thorough justification using booklet evidence AND own knowledge; alternatives weighed; convincing conclusion.','L3 (7–9): decision with reasonable analysis; uses the booklet; judgement present but thinner.','L2 (4–6): some valid points, limited booklet use, weak weighing of options.','L1 (1–3): simple statements, little evidence.'],
+tip:'AO3 + AO4. Formula: DECIDE in sentence one → three justified reasons, each quoting the booklet → one paragraph on why the alternative loses → conclude. Comparisons to your taught case studies lift you into L4.'}
+];
+
+/* ===================== ENGINE ===================== */
+const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+let store={};
+try{store=JSON.parse(localStorage.getItem('hapGeoV1')||'{}')}catch(e){store={}}
+const save=()=>{try{localStorage.setItem('hapGeoV1',JSON.stringify(store))}catch(e){}};
+
+/* tabs */
+$$('.tab').forEach(t=>t.addEventListener('click',()=>{
+  $$('.tab').forEach(x=>x.classList.remove('on'));t.classList.add('on');
+  $$('.panel').forEach(p=>p.classList.remove('on'));
+  document.getElementById(t.dataset.p).classList.add('on');
+  window.scrollTo({top:0});
+}));
+
+/* topics */
+const PNAME={1:'PAPER 1',2:'PAPER 2',3:'PAPER 3',0:'PAPERS 1 & 2'};
+const PCLS={1:'p1',2:'p2',3:'p3',0:'p3'};
+$('#topiclist').innerHTML=TOPICS.map(t=>`
+<div class="card topic ${PCLS[t.paper]}">
+<span class="chip paper">${PNAME[t.paper]}</span> <span class="gref">${t.id}</span>
+<h3>${t.name}</h3>
+<div class="meta">${t.eq.join(' · ')}</div>
+<details open><summary>Must know cold</summary><ul class="tick">${t.must.map(m=>`<li>${m}</li>`).join('')}</ul></details>
+<details><summary>Case-study slots</summary><ul class="tick">${t.cs.map(c=>`<li>${c}</li>`).join('')}</ul>
+<div class="note"><b>Check:</b> match these slots to the case studies taught in YOUR lessons before you revise them.</div></details>
+<div class="note"><b>Examiner trap:</b> ${t.trap}</div>
+</div>`).join('');
+
+/* glossary */
+const GF=['ALL','GH','CC','DL','SE','UF','DD','UK','RR','FW','P3'];
+const GN={ALL:'All',GH:'Hazards',CC:'Climate',DL:'Landscapes',SE:'Ecosystems',UF:'Urban',DD:'Development',UK:'UK',RR:'Resources',FW:'Fieldwork',P3:'Paper 3'};
+let gfilter='ALL';
+$('#gfilters').innerHTML=GF.map(f=>`<button class="fbtn ${f==='ALL'?'on':''}" data-f="${f}">${GN[f]}</button>`).join('');
+$$('#gfilters .fbtn').forEach(b=>b.addEventListener('click',()=>{
+  gfilter=b.dataset.f;$$('#gfilters .fbtn').forEach(x=>x.classList.toggle('on',x===b));renderGloss();
+}));
+$('#gsearch').addEventListener('input',renderGloss);
+function renderGloss(){
+  const q=($('#gsearch').value||'').toLowerCase();
+  const items=GLOSSARY.filter(([t,d,tag])=>(gfilter==='ALL'||tag===gfilter)&&(t.toLowerCase().includes(q)||d.toLowerCase().includes(q)));
+  $('#glist').innerHTML=items.length?items.map(([t,d,tag])=>`<div class="gitem"><b>${t}</b> <span class="tag">· ${GN[tag]}</span><div class="def">${d}</div></div>`).join(''):'<div class="gitem">No terms match — try fewer letters.</div>';
+}
+renderGloss();
+
+/* flashcards */
+const DECKNAMES={GH:'Global Hazards',CC:'Changing Climate',DL:'Distinctive Landscapes',SE:'Sustaining Ecosystems',UF:'Urban Futures',DD:'Dynamic Development',UK:'UK in the 21st C.',RR:'Resource Reliance',FW:'Fieldwork & Skills'};
+let deck=null,order=[],idx=0;
+$('#decks').innerHTML=Object.keys(DECKS).map(k=>`<button class="deckbtn" data-d="${k}">${DECKNAMES[k]}<small>${DECKS[k].length} cards</small></button>`).join('');
+$$('#decks .deckbtn').forEach(b=>b.addEventListener('click',()=>{
+  $$('#decks .deckbtn').forEach(x=>x.classList.toggle('on',x===b));
+  deck=b.dataset.d;order=[...DECKS[deck].keys()];idx=0;
+  $('#fcwrap').style.display='block';showCard();
+}));
+const fcard=$('#fcard');
+fcard.addEventListener('click',()=>fcard.classList.toggle('flip'));
+fcard.addEventListener('keydown',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();fcard.classList.toggle('flip')}});
+function showCard(){
+  if(!order.length){$('#fq').textContent='Deck complete — every card marked "Got it". Legend.';$('#fa').textContent='Shuffle to run it again.';fcard.classList.remove('flip');$('#fprog').textContent='0 remaining';return}
+  idx=idx%order.length;
+  const [q,a]=DECKS[deck][order[idx]];
+  fcard.classList.remove('flip');
+  setTimeout(()=>{$('#fq').textContent=q;$('#fa').textContent=a;},60);
+  $('#fprog').textContent=`Card ${idx+1} of ${order.length} remaining · ${DECKNAMES[deck]}`;
+}
+$('#fagain').addEventListener('click',()=>{order.push(order.splice(idx,1)[0]);showCard()});
+$('#fgot').addEventListener('click',()=>{order.splice(idx,1);showCard()});
+$('#fshuffle').addEventListener('click',()=>{order=[...DECKS[deck].keys()].sort(()=>Math.random()-.5);idx=0;showCard()});
+
+/* practice MCQ */
+let qtopic='GH';
+$('#qtopics').innerHTML=Object.keys(MCQ).map(k=>`<button class="fbtn ${k==='GH'?'on':''}" data-q="${k}">${DECKNAMES[k]||'Paper 3'}</button>`).join('');
+$$('#qtopics .fbtn').forEach(b=>b.addEventListener('click',()=>{
+  qtopic=b.dataset.q;$$('#qtopics .fbtn').forEach(x=>x.classList.toggle('on',x===b));renderQuiz();
+}));
+function renderQuiz(){
+  let right=0,done=0;const qs=MCQ[qtopic];
+  $('#qarea').innerHTML=`<div class="score" id="scoreline">Answer the ${qs.length} questions — instant feedback.</div>`+
+  qs.map((q,i)=>`<div class="qcard"><div class="qt">${i+1}. ${q[0]}</div>${q[1].map((o,j)=>`<button class="opt" data-i="${i}" data-j="${j}">${o}</button>`).join('')}<div class="expl" id="ex${i}">${q[3]}</div></div>`).join('');
+  $$('#qarea .opt').forEach(btn=>btn.addEventListener('click',()=>{
+    const i=+btn.dataset.i,j=+btn.dataset.j,q=qs[i];
+    const sibs=$$(`#qarea .opt[data-i="${i}"]`);
+    if(btn.disabled)return;
+    sibs.forEach(s=>{s.disabled=true;if(+s.dataset.j===q[2])s.classList.add('correct')});
+    if(j!==q[2])btn.classList.add('wrong');else right++;
+    done++;document.getElementById('ex'+i).classList.add('show');
+    $('#scoreline').textContent=`Score: ${right}/${done} answered · ${qs.length-done} to go`;
+  }));
+}
+renderQuiz();
+
+/* extended answer gym */
+$('#msqs').innerHTML=MSQS.map(m=>`<div class="msq">
+<span class="chip cp${m.p}">PAPER ${m.p}</span>
+<div class="qt">${m.q} <span class="marks">[${m.m}]</span></div>
+<details><summary>Mark it like an examiner (levels)</summary>
+<ul class="tick">${m.lv.map(l=>`<li>${l}</li>`).join('')}</ul>
+<div class="note"><b>Technique:</b> ${m.tip}</div></details>
+</div>`).join('');
+</script>
+</body>
+</html>
